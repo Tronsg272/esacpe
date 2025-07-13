@@ -1,27 +1,21 @@
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #0f0f0f, #1c1c1c);
-  color: #f5f5f5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  background-color: #2d0033;
+  color: #fdd;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
 }
 
 .container {
-  text-align: center;
-  padding: 30px;
-  background: #2a2a2a;
-  border-radius: 12px;
-  box-shadow: 0 0 15px #000;
-  max-width: 720px;
-  width: 100%;
+  max-width: 600px;
+  margin: auto;
 }
 
 video {
-  border-radius: 8px;
-  border: 2px solid #444;
+  width: 100%;
+  max-height: 400px;
+  border-radius: 12px;
+  margin-bottom: 20px;
 }
 
 .input-group {
@@ -31,27 +25,21 @@ video {
 input[type="text"] {
   padding: 10px;
   width: 60%;
-  border: 2px solid #666;
-  border-radius: 6px;
-  background: #1e1e1e;
-  color: #fff;
+  border: 2px solid #ff69b4;
+  border-radius: 8px;
 }
 
 button {
   padding: 10px 20px;
-  margin-left: 10px;
-  background-color: #8e44ad;
-  border: none;
-  border-radius: 6px;
+  background-color: #ff69b4;
   color: white;
+  border: none;
+  border-radius: 8px;
+  margin-left: 10px;
   cursor: pointer;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background-color: #732d91;
 }
 
 #message {
-  margin-top: 20px;
+  margin-top: 15px;
+  font-weight: bold;
 }
