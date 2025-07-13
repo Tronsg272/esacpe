@@ -1,85 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #0a0a0a;
-  background-image: url('https://www.transparenttextures.com/patterns/black-felt.png');
-  color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
-  background-size: auto;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png') repeat #1a001f;
+  color: #fddcff;
 }
 
 .container {
-  background: rgba(20, 20, 20, 0.85);
-  border-radius: 16px;
-  padding: 30px;
-  max-width: 500px;
-  width: 100%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(30, 0, 40, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 0 20px #000;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 28px;
   margin-bottom: 20px;
-  color: #e0b3ff;
+  color: #ffccff;
 }
 
 video {
-  width: 100%;
-  max-height: 400px;
+  max-width: 100%;
   border-radius: 12px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.input-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 input[type="text"] {
-  padding: 10px 15px;
-  font-size: 1rem;
-  width: 70%;
-  border: 1px solid #555;
+  padding: 10px;
   border-radius: 8px;
-  background-color: #1a1a1a;
-  color: #fff;
-  outline: none;
-  margin-bottom: 10px;
+  border: none;
+  width: 60%;
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #cc66ff;
-  color: #fff;
+  padding: 10px 16px;
   border: none;
   border-radius: 8px;
+  background-color: #ff66aa;
+  color: white;
   cursor: pointer;
-  transition: background-color 0.3s;
-  margin-left: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #b84dff;
+  background-color: #ff3388;
 }
 
 #feedback {
+  color: #ff9999;
   margin-top: 10px;
   font-weight: bold;
-  color: #ff4d4d;
-}
-
-.success {
-  color: #66ff66;
-}
-
-footer {
-  margin-top: 30px;
-  font-size: 0.9rem;
-  color: #aaa;
-  font-style: italic;
 }
