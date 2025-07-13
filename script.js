@@ -1,39 +1,31 @@
-const questions = [
-  {
-    question: "Zagadka 1: Co ma cztery nogi rano, dwie w południe, a trzy wieczorem?",
-    answer: "człowiek"
-  },
-  {
-    question: "Zagadka 2: Bez języka, a mówi. Bez skrzydeł, a leci.",
-    answer: "echo"
-  },
-  {
-    question: "Zagadka 3: Im więcej zabierasz, tym większy się staje. Co to?",
-    answer: "dziura"
-  }
-];
-
+const videos = ["1.mp4", "2.mp4", "3.mp4"];
+const answers = ["głośnik", "przyprawy", "łóżko"];
 let current = 0;
 
-function loadQuestion() {
-  if (current < questions.length) {
-    document.getElementById("question").textContent = questions[current].question;
-    document.getElementById("answer").value = "";
-    document.getElementById("feedback").textContent = "";
-  } else {
-    document.getElementById("question-box").innerHTML = "<h2>Gratulacje! Uciekłeś! 🎉</h2>";
-  }
+const video = document.getElementById("video");
+const input = document.getElementById("answerInput");
+const feedback = document.getElementById("feedback");
+
+function loadVideo(index) {
+  video.src = videos[index];
+  input.value = "";
+  feedback.textContent = "";
 }
 
 function checkAnswer() {
-  const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
-  if (userAnswer === questions[current].answer) {
+  const userAnswer = input.value.trim().toLowerCase();
+  if (userAnswer === answers[current]) {
+    feedback.textContent = "✅ Dobrze!";
     current++;
-    loadQuestion();
+    if (current < videos.length) {
+      setTimeout(() => loadVideo(current), 1500);
+    } else {
+      feedback.textContent = "🎉 Gratulacje! Ukończyłeś escape room!";
+      input.disabled = true;
+    }
   } else {
-    document.getElementById("feedback").textContent = "Niepoprawna odpowiedź. Spróbuj ponownie.";
+    feedback.textContent = "❌ Błędna odpowiedź. Spróbuj jeszcze raz.";
   }
 }
 
-// Start
-loadQuestion();
+loadVideo(current);
