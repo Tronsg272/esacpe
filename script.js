@@ -12,20 +12,27 @@ const title = document.getElementById('title');
 btn.addEventListener('click', () => {
   const user = input.value.trim().toLowerCase();
   const correct = answers[current];
+
   if (user === correct) {
     current++;
+
     if (current < videos.length) {
       video.src = videos[current];
       stepElem.textContent = current + 1;
       input.value = '';
       msg.textContent = '';
     } else {
+      // Wszystkie zagadki rozwiązane
       title.innerHTML = '🎉 Gratulacje!';
-      video.style.display = 'none';
       document.querySelector('.input-group').style.display = 'none';
-      msg.innerHTML = 'Hasło do kłódki: <strong>2xx65</strong><br><em>(pozostałe cyfry znajdziesz przy kłódce)</em>';
+      msg.innerHTML = 'Hasło do kłódki: <strong>2xx65</strong><br><em>(pozostałe cyfry znajdziesz dalej)</em>';
+
+      // Wyświetl ostatni film
+      video.src = '4.mp4';
+      video.style.display = 'block';
     }
   } else {
     msg.textContent = '❌ Spróbuj jeszcze raz!';
   }
 });
+
