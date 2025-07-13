@@ -49,6 +49,8 @@ hasloContainer.innerHTML = `
 document.body.appendChild(hasloContainer);
 
 video.addEventListener("ended", () => {
-  hasloContainer.style.display = "block";
+  if (current === videos.length) {
+    hasloContainer.style.display = "block";
+  }
 });
 
