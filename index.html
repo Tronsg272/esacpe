@@ -2,19 +2,19 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>Escape Room Online</title>
+  <title>Escape Room</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1 class="fade-in">Escape Room Online</h1>
-    <div id="question-box" class="fade-in">
-      <p id="question">Ładowanie...</p>
-      <input type="text" id="answer" placeholder="Twoja odpowiedź">
-      <button onclick="checkAnswer()">OK</button>
-      <p id="feedback"></p>
-    </div>
+    <h1>Escape Room – Zagadki Wideo</h1>
+    <video id="video" controls></video>
+    
+    <input type="text" id="answerInput" placeholder="Wpisz odpowiedź...">
+    <button onclick="checkAnswer()">Sprawdź</button>
+    <p id="feedback"></p>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
