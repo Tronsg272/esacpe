@@ -1,26 +1,24 @@
+const answers = ["głośnik", "przyprawy", "łóżko"];
 const videos = ["1.mp4", "2.mp4", "3.mp4"];
-const passwords = ["głośnik", "przyprawy", "łóżko"];
-let current = 0;
+let stage = 0;
 
-function checkPassword() {
-  const input = document.getElementById("password").value.trim().toLowerCase();
-  const correct = passwords[current].toLowerCase();
+function checkAnswer() {
+  const input = document.getElementById("answer").value.trim().toLowerCase();
+  const message = document.getElementById("message");
 
-  if (input === correct) {
-    current++;
-
-    if (current < videos.length) {
-      document.getElementById("video").src = videos[current];
-      document.getElementById("step").textContent = `Zagadka ${current + 1}/3`;
-      document.getElementById("password").value = "";
-      document.getElementById("message").textContent = "";
+  if (input === answers[stage]) {
+    stage++;
+    if (stage < answers.length) {
+      document.getElementById("video").src = videos[stage];
+      document.getElementById("answer").value = "";
+      message.textContent = "Dobra odpowiedź! Dalej...";
     } else {
-      document.querySelector(".input-group").style.display = "none";
-      document.getElementById("step").textContent = "🎉 Gratulacje!";
-      document.getElementById("message").innerHTML =
-        'Hasło do kłódki to: <strong>2xx65</strong><br><em>(pozostałe cyfry znajdziesz przy kłódce)</em>';
+      document.getElementById("stage-container").innerHTML = `
+        <p class="final">Gratulacje! Hasło do kłódki: <strong>2xx5</strong><br/>
+        Dwie cyfry znajdziesz przy kłódce 🕵️‍♂️</p>
+      `;
     }
   } else {
-    document.getElementById("message").textContent = "❌ Spróbuj jeszcze raz!";
+    message.textContent = "Nieprawidłowa odpowiedź. Spróbuj ponownie.";
   }
 }
