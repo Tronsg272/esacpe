@@ -2,23 +2,24 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Escape Room</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Zagadka <span id="step">1</span>/3</h1>
-    <video id="video" width="640" height="360" controls autoplay>
-      <source src="1.mp4" type="video/mp4" />
-      Twoja przeglądarka nie obsługuje wideo.
-    </video>
+    <h1 id="step">Zagadka 1/3</h1>
+    
+    <video id="video" src="1.mp4" controls></video>
+
     <div class="input-group">
-      <input type="text" id="password" placeholder="Wpisz hasło..." />
+      <input type="text" id="password" placeholder="Podaj hasło" />
       <button onclick="checkPassword()">Dalej</button>
     </div>
+
     <p id="message"></p>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
