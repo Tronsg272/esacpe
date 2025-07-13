@@ -8,7 +8,11 @@
 <body>
   <div class="container">
     <h1>Escape Room – Zagadki Wideo</h1>
-    <video id="video" controls></video>
+    <video id="video" width="480" height="270" controls>
+  <source src="1.mp4" type="video/mp4">
+  Twoja przeglądarka nie obsługuje wideo.
+</video>
+
     
     <input type="text" id="answerInput" placeholder="Wpisz odpowiedź...">
     <button onclick="checkAnswer()">Sprawdź</button>
