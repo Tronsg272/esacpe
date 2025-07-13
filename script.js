@@ -21,6 +21,7 @@ function checkAnswer() {
       setTimeout(() => loadVideo(current), 1500);
     } else {
       feedback.textContent = "🎉 Gratulacje! Ukończyłeś escape room!";
+      hasloContainer.style.display = "block"; 
       input.disabled = true;
     }
   } else {
