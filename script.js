@@ -29,3 +29,26 @@ function checkAnswer() {
 }
 
 loadVideo(current);
+// ...twój aktualny kod JS tutaj...
+
+// 👇 Wklej to poniżej
+const video = document.querySelector("video");
+
+const hasloContainer = document.createElement("div");
+hasloContainer.id = "haslo-container";
+hasloContainer.style.display = "none";
+hasloContainer.style.color = "white";
+hasloContainer.style.marginTop = "20px";
+hasloContainer.style.fontSize = "1.3rem";
+hasloContainer.style.textAlign = "center";
+hasloContainer.innerHTML = `
+  🔒 Kod do kłódki: <strong>2 _ _ 9</strong><br>
+  <small>Reszta cyfr znajduje się obok kłódki.</small>
+`;
+
+document.body.appendChild(hasloContainer);
+
+video.addEventListener("ended", () => {
+  hasloContainer.style.display = "block";
+});
+
