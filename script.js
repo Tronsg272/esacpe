@@ -1,67 +1,24 @@
-const videos = ["1.mp4", "2.mp4", "3.mp4"];
-const answers = ["głośnik", "przyprawy", "łóżko"];
-let current = 0;
-
-const video = document.getElementById("video");
-const input = document.getElementById("answerInput");
-const hasloContainer = document.createElement("div");
-hasloContainer.id = "haslo-container";
-hasloContainer.style.display = "none";
-hasloContainer.style.color = "white";
-hasloContainer.style.marginTop = "20px";
-hasloContainer.style.fontSize = "1.3rem";
-hasloContainer.style.textAlign = "center";
-hasloContainer.textContent = "🎁 Hasło: ROCZNICA2025"; // <- zmień tekst jeśli chcesz
-document.body.appendChild(hasloContainer);
-
-const feedback = document.getElementById("feedback");
-
-function loadVideo(index) {
-  video.src = videos[index];
-  input.value = "";
-  feedback.textContent = "";
-}
+const answers = ["głośnik", "łóżko", "rocznica"];
+let currentStep = 0;
 
 function checkAnswer() {
-  const userAnswer = input.value.trim().toLowerCase();
-  if (userAnswer === answers[current]) {
-    feedback.textContent = "✅ Dobrze!";
-    current++;
-    if (current < videos.length) {
-      setTimeout(() => loadVideo(current), 1500);
+  const input = document.getElementById("answerInput").value.trim().toLowerCase();
+  const feedback = document.getElementById("feedback");
+  const video = document.getElementById("video");
+
+  if (input === answers[currentStep]) {
+    currentStep++;
+    if (currentStep < answers.length) {
+      const nextVideo = `${currentStep + 1}.mp4`; // np. 2.mp4, 3.mp4
+      video.src = nextVideo;
+      video.load();
+      video.play();
+      feedback.textContent = "✅ Dobra odpowiedź!";
     } else {
-      feedback.textContent = "🎉 Gratulacje! Ukończyłeś escape room!";
-      hasloContainer.style.display = "block"; 
-      input.disabled = true;
+      feedback.textContent = "🎉 Gratulacje! Hasło: ROCZNICA2025";
     }
   } else {
-    feedback.textContent = "❌ Błędna odpowiedź. Spróbuj jeszcze raz.";
+    feedback.textContent = "❌ Spróbuj jeszcze raz!";
   }
 }
-
-loadVideo(current);
-// ...twój aktualny kod JS tutaj...
-
-// 👇 Wklej to poniżej
-const video = document.querySelector("video");
-
-const hasloContainer = document.createElement("div");
-hasloContainer.id = "haslo-container";
-hasloContainer.style.display = "none";
-hasloContainer.style.color = "white";
-hasloContainer.style.marginTop = "20px";
-hasloContainer.style.fontSize = "1.3rem";
-hasloContainer.style.textAlign = "center";
-hasloContainer.innerHTML = `
-  🔒 Kod do kłódki: <strong>2 _ _ 9</strong><br>
-  <small>Reszta cyfr znajduje się obok kłódki.</small>
-`;
-
-document.body.appendChild(hasloContainer);
-
-video.addEventListener("ended", () => {
-  if (current === videos.length) {
-    hasloContainer.style.display = "block";
-  }
-});
 
