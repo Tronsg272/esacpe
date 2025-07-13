@@ -1,24 +1,26 @@
-const answers = ["głośnik", "przyprawy", "łóżko"];
-const videos = ["1.mp4", "2.mp4", "3.mp4"];
-let stage = 0;
+const answers = ["przyprawy", "zegarek", "serce"]; // wpisz swoje odpowiedzi
+let current = 0;
 
 function checkAnswer() {
-  const input = document.getElementById("answer").value.trim().toLowerCase();
-  const message = document.getElementById("message");
+  const input = document.getElementById("answer");
+  const feedback = document.getElementById("feedback");
 
-  if (input === answers[stage]) {
-    stage++;
-    if (stage < answers.length) {
-      document.getElementById("video").src = videos[stage];
-      document.getElementById("answer").value = "";
-      message.textContent = "Dobra odpowiedź! Dalej...";
+  if (input.value.trim().toLowerCase() === answers[current]) {
+    feedback.textContent = "";
+    input.value = "";
+    current++;
+
+    if (current < answers.length) {
+      document.getElementById("videoSource").src = `${current + 1}.mp4`;
+      document.getElementById("video").load();
     } else {
-      document.getElementById("stage-container").innerHTML = `
-        <p class="final">Gratulacje! Hasło do kłódki: <strong>2xx5</strong><br/>
-        Dwie cyfry znajdziesz przy kłódce 🕵️‍♂️</p>
-      `;
+      // KONIEC GRY
+      document.querySelector("video").style.display = "none";
+      document.querySelector(".input-box").style.display = "none";
+      document.getElementById("title").style.display = "none";
+      document.getElementById("final").style.display = "block";
     }
   } else {
-    message.textContent = "Nieprawidłowa odpowiedź. Spróbuj ponownie.";
+    feedback.textContent = "❌ Spróbuj jeszcze raz!";
   }
 }
