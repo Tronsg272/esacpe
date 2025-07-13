@@ -1,37 +1,23 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Escape Room</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Escape Room – Rocznicowa</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1 id="title">Escape Room - Rocznicza</h1>
-
-    <video id="video" controls>
-      <source id="videoSource" src="1.mp4" type="video/mp4">
+    <h1 id="title">Zagadka <span id="step">1</span>/3</h1>
+    <video id="video" width="480" height="270" controls>
+      <source src="1.mp4" type="video/mp4">
       Twoja przeglądarka nie obsługuje wideo.
     </video>
-
-    <div class="input-box">
-      <input type="text" id="answer" placeholder="Wpisz odpowiedź..." />
-      <button onclick="checkAnswer()">Zatwierdź</button>
+    <div class="input-group">
+      <input type="text" id="answer" placeholder="Wpisz odpowiedź…">
+      <button id="checkBtn">Potwierdź</button>
     </div>
-
-    <div id="feedback"></div>
-
-    <div id="final" style="display: none;">
-      <h2>🎉 Gratulacje!</h2>
-      <video controls>
-        <source src="3.mp4" type="video/mp4" />
-      </video>
-      <p><strong>Hasło do kłódki to: <span style="color: #ffccff">2xx65</span></strong><br>
-      <em>(pozostałe cyfry znajdziesz przy kłódce)</em></p>
-    </div>
+    <p id="message"></p>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
