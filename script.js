@@ -9,7 +9,7 @@ function checkAnswer() {
   if (input === answers[currentStep]) {
     currentStep++;
     if (currentStep < answers.length) {
-      const nextVideo = `${currentStep + 1}.mp4`; // np. 2.mp4, 3.mp4
+      const nextVideo = `${currentStep + 1}.mp4`;
       video.src = nextVideo;
       video.load();
       video.play();
@@ -21,4 +21,3 @@ function checkAnswer() {
     feedback.textContent = "❌ Spróbuj jeszcze raz!";
   }
 }
-
