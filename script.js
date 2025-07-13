@@ -1,26 +1,31 @@
-const answers = ["przyprawy", "zegarek", "serce"]; // wpisz swoje odpowiedzi
+const videos = ['1.mp4', '2.mp4', '3.mp4'];
+const answers = ['głośnik', 'przyprawy', 'łóżko'];
 let current = 0;
 
-function checkAnswer() {
-  const input = document.getElementById("answer");
-  const feedback = document.getElementById("feedback");
+const video = document.getElementById('video');
+const stepElem = document.getElementById('step');
+const input = document.getElementById('answer');
+const btn = document.getElementById('checkBtn');
+const msg = document.getElementById('message');
+const title = document.getElementById('title');
 
-  if (input.value.trim().toLowerCase() === answers[current]) {
-    feedback.textContent = "";
-    input.value = "";
+btn.addEventListener('click', () => {
+  const user = input.value.trim().toLowerCase();
+  const correct = answers[current];
+  if (user === correct) {
     current++;
-
-    if (current < answers.length) {
-      document.getElementById("videoSource").src = `${current + 1}.mp4`;
-      document.getElementById("video").load();
+    if (current < videos.length) {
+      video.src = videos[current];
+      stepElem.textContent = current + 1;
+      input.value = '';
+      msg.textContent = '';
     } else {
-      // KONIEC GRY
-      document.querySelector("video").style.display = "none";
-      document.querySelector(".input-box").style.display = "none";
-      document.getElementById("title").style.display = "none";
-      document.getElementById("final").style.display = "block";
+      title.innerHTML = '🎉 Gratulacje!';
+      video.style.display = 'none';
+      document.querySelector('.input-group').style.display = 'none';
+      msg.innerHTML = 'Hasło do kłódki: <strong>2xx65</strong><br><em>(pozostałe cyfry znajdziesz przy kłódce)</em>';
     }
   } else {
-    feedback.textContent = "❌ Spróbuj jeszcze raz!";
+    msg.textContent = '❌ Spróbuj jeszcze raz!';
   }
-}
+});
