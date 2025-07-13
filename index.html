@@ -1,23 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Escape Room</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Escape Room - Rocznicza</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Rocznica Czas tyka</h1>
-    <video controls>
-      <source src="video.mp4" type="video/mp4" />
+    <h1>Rocznicza?</h1>
+    <video id="video" width="640" height="360" controls autoplay>
+      <source src="1.mp4" type="video/mp4">
       Twoja przeglądarka nie obsługuje wideo.
     </video>
-    <input type="text" id="answer" placeholder="Wpisz odpowiedź..." />
-    <button onclick="checkAnswer()">Sprawdź</button>
-    <p id="result"></p>
+    <div id="pytanie">Podaj hasło:</div>
+    <input type="text" id="odpowiedz" placeholder="Wpisz odpowiedź..." />
+    <button onclick="sprawdzOdpowiedz()">Dalej</button>
+    <div id="feedback"></div>
+    <div id="final" style="display: none;">
+      🔐 Hasło do kłódki: <strong>2xx5</strong><br>
+      Pozostałe cyfry znajdziesz obok kłódki.
+    </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
