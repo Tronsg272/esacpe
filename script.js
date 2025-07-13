@@ -1,12 +1,12 @@
 function checkAnswer() {
-  const input = document.getElementById("answer").value.trim().toLowerCase();
+  const answer = document.getElementById("answer").value.trim().toLowerCase();
   const result = document.getElementById("result");
 
-  if (input === "przyprawy") {
+  if (answer === "przyprawy") {
     result.style.color = "lightgreen";
     result.innerHTML = "✅ Poprawna odpowiedź!";
-    // Można dodać przekierowanie, np.:
-    // window.location.href = "kolejny_etap.html";
+    // Możesz przekierować do następnej strony, np.:
+    // window.location.href = "nastepna.html";
   } else {
     result.style.color = "red";
     result.innerHTML = "❌ Spróbuj jeszcze raz!";
