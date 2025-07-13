@@ -4,6 +4,16 @@ let current = 0;
 
 const video = document.getElementById("video");
 const input = document.getElementById("answerInput");
+const hasloContainer = document.createElement("div");
+hasloContainer.id = "haslo-container";
+hasloContainer.style.display = "none";
+hasloContainer.style.color = "white";
+hasloContainer.style.marginTop = "20px";
+hasloContainer.style.fontSize = "1.3rem";
+hasloContainer.style.textAlign = "center";
+hasloContainer.textContent = "🎁 Hasło: ROCZNICA2025"; // <- zmień tekst jeśli chcesz
+document.body.appendChild(hasloContainer);
+
 const feedback = document.getElementById("feedback");
 
 function loadVideo(index) {
