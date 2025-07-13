@@ -1,26 +1,38 @@
+let currentStep = 1;
 
-let aktualne = 0;
-const filmy = ["1.mp4", "2.mp4", "3.mp4"];
-const hasla = ["głośnik", "przyprawy", "łóżko"];
+const passwords = {
+  1: "głośnik",
+  2: "przyprawy",
+  3: "2xx5" // Przykładowe hasło końcowe z 2 cyframi jawnie
+};
 
-function sprawdzOdpowiedz() {
-  const odp = document.getElementById("odpowiedz").value.trim().toLowerCase();
-  const feedback = document.getElementById("feedback");
-  if (odp === hasla[aktualne]) {
-    aktualne++;
-    if (aktualne < filmy.length) {
-      document.getElementById("video").src = filmy[aktualne];
-      document.getElementById("odpowiedz").value = "";
-      feedback.textContent = "";
+function checkPassword() {
+  const input = document.getElementById("password").value.trim().toLowerCase();
+  const error = document.getElementById("error");
+
+  if (input === passwords[currentStep]) {
+    currentStep++;
+
+    if (currentStep > 3) {
+      document.querySelector("video").style.display = "none";
+      document.getElementById("title").innerText = "Hasło końcowe: 2xx5";
+      document.querySelector(".input-section").style.display = "none";
     } else {
-      document.getElementById("video").style.display = "none";
-      document.getElementById("pytanie").style.display = "none";
-      document.getElementById("odpowiedz").style.display = "none";
-      document.querySelector("button").style.display = "none";
-      feedback.style.display = "none";
-      document.getElementById("final").style.display = "block";
+      loadStep();
     }
   } else {
-    feedback.textContent = "Błędna odpowiedź. Spróbuj ponownie.";
+    error.innerText = "❌ Spróbuj jeszcze raz!";
   }
+}
+
+function loadStep() {
+  const video = document.getElementById("video");
+  const title = document.getElementById("title");
+  const error = document.getElementById("error");
+  const input = document.getElementById("password");
+
+  video.src = `${currentStep}.mp4`;
+  title.innerText = currentStep === 2 ? "Rocznica Czas tyka" : "Ostatnie pytanie";
+  input.value = "";
+  error.innerText = "";
 }
