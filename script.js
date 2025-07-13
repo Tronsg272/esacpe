@@ -1,5 +1,5 @@
 const videos = ["1.mp4", "2.mp4", "3.mp4"];
-const passwords = ["głośnik", "przyprawy!", "łóżko"];
+const passwords = ["głośnik", "przyprawy", "łóżko"];
 let current = 0;
 
 function checkPassword() {
