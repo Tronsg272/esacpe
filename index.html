@@ -1,27 +1,40 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Escape Room</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escape Room - Rocznicza?</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1 id="title">Rocznica?</h1>
-    <video id="video" controls>
-      <source src="1.mp4" type="video/mp4" />
-      Twoja przeglądarka nie obsługuje video.
+  <h1>Rocznicza?</h1>
+
+  <div class="video-container">
+    <video width="320" height="480" controls>
+      <source src="film.mp4" type="video/mp4" />
+      Twoja przeglądarka nie wspiera wideo.
     </video>
-    <div class="input-section">
-      <label for="password">Podaj hasło:</label>
-      <input type="text" id="password" />
-      <button onclick="checkPassword()">Dalej</button>
-      <p id="error" class="error"></p>
-    </div>
   </div>
 
-  <script src="script.js"></script>
+  <div class="input-box">
+    <label for="password">Podaj hasło:</label><br />
+    <input type="text" id="password" placeholder="Wpisz odpowiedź..." />
+    <button onclick="checkPassword()">Dalej</button>
+  </div>
+
+  <p id="result"></p>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("password").value.trim().toLowerCase();
+      const correct = ["pieprz", "papryka", "kurkuma"]; // <-- wpisz tutaj poprawne hasła
+
+      if (correct.includes(input)) {
+        document.getElementById("result").textContent = "Hasło poprawne! Hasło końcowe to: 2xx5";
+      } else {
+        document.getElementById("result").textContent = "Niepoprawne hasło. Spróbuj ponownie.";
+      }
+    }
+  </script>
 </body>
 </html>
