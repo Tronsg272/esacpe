@@ -2,22 +2,21 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Escape Room</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h1>Rocznica Czas tyka</h1>
-    <video id="video" width="360" height="640" controls>
-      <source id="videoSource" src="1.mp4" type="video/mp4" />
-      Twoja przeglądarka nie obsługuje wideo.
+    <video id="video" width="320" height="240" controls>
+      <source src="video2.mp4" type="video/mp4" />
+      Twoja przeglądarka nie obsługuje odtwarzacza video.
     </video>
-
-    <input type="text" id="answerInput" placeholder="Wpisz odpowiedź..." />
+    <input type="text" id="answer" placeholder="Wpisz odpowiedź..." />
     <button onclick="checkAnswer()">Sprawdź</button>
-    <p id="feedback"></p>
+    <p id="result"></p>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
