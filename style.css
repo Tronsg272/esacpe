@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #1e1e2f;
-  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0d0d1a, #1a1a2e);
+  color: #f0e6ff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,53 +10,63 @@ body {
 }
 
 .container {
-  max-width: 700px;
+  background: rgba(20, 20, 40, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(200, 200, 255, 0.2);
   width: 90%;
-  padding: 20px;
-  border-radius: 15px;
-  background-color: #2a2a40;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 700px;
+  text-align: center;
 }
 
-.title {
-  text-align: center;
-  font-size: 32px;
+h1 {
+  font-size: 30px;
+  color: #ffd700;
   margin-bottom: 20px;
-  color: #ffcc00;
 }
 
 video {
   width: 100%;
   border-radius: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  border: 2px solid #444;
 }
 
 input[type="text"] {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  border: none;
+  padding: 12px;
   font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  background-color: #1a1a2e;
+  color: #fff;
+  margin-bottom: 15px;
 }
 
 button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
-  background-color: #ffcc00;
+  background: linear-gradient(135deg, #ffd700, #ffb300);
   color: #000;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: #e6b800;
+  background: linear-gradient(135deg, #fff200, #ffaa00);
+  transform: scale(1.02);
 }
 
 #message {
-  margin-top: 10px;
+  margin-top: 15px;
   font-size: 18px;
-  text-align: center;
+  color: #ff4d4d;
 }
+
+.final {
+  font-size: 22px;
+  color: #00ffcc;
+  font
