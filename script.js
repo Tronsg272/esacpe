@@ -25,7 +25,7 @@ btn.addEventListener('click', () => {
       // Wszystkie zagadki rozwiązane
       title.innerHTML = '🎉 Gratulacje!';
       document.querySelector('.input-group').style.display = 'none';
-      msg.innerHTML = 'Hasło do kłódki: <strong>2xx65</strong><br><em>(pozostałe cyfry znajdziesz dalej)</em>';
+      msg.innerHTML = 'Hasło do kłódki: <strong>2xx65</strong><br><em>(pozostałe cyfry znajdziesz przy szafie)</em>';
 
       // Wyświetl ostatni film
       video.src = '4.mp4';
